@@ -1,0 +1,63 @@
+<h1 class="py-3">Welcome to Spotify</h1>
+<hr>
+<div class="d-flex flex-row justify-content-between">
+    <div class="d-flex">
+        <h3>New releases :</h3>
+    </div>
+    <div class="d-flex">
+        <a class="nav-link" routerLink="/new-releases">Show all</a>
+    </div>
+</div>
+
+<div class="row border-1 p-2" style="flex-wrap: nowrap;overflow-x: hidden;">
+    <div class="card m-2 shadow" style="width: 150px;padding: 0px;overflow: hidden;" *ngFor="let newRelease of newReleases">
+        <img [src]="newRelease?.images[0]?.url" class="card-img-top img-fluid">
+        <div class="card-body ">
+            <a class="nav-link" routerLink="/albums/{{newRelease.id}}">
+                <p class="card-text">{{newRelease.name}}</p>
+            </a>
+        </div>
+    </div>
+</div>
+<!--  -->
+<div class="d-flex flex-row justify-content-between">
+    <div class="d-flex">
+        <h3>Browse by categories :</h3>
+    </div>
+    <div class="d-flex">
+        <a class="nav-link" routerLink="/categories">Show all</a>
+    </div>
+</div>
+<div class="row border-1 p-2" style="flex-wrap: nowrap;overflow-x: hidden;">
+    <div class="card m-2 shadow" style="width: 150px;padding: 0px;overflow: visible;" *ngFor="let category of categories">
+        <a routerLink="/tracks-by-category/{{category.id}}" class="nav-link">
+            <img [src]="category?.icons[0]?.url" class="card-img-top img-fluid">
+            <div class="card-body ">
+                <a class="nav-link">
+                    <p class="card-text">{{category.name}}</p>
+                </a>
+            </div>
+        </a>
+    </div>
+</div>
+<!--  -->
+<div class="d-flex flex-row justify-content-between">
+    <div class="d-flex">
+        <h3>Featured :</h3>
+    </div>
+    <div class="d-flex">
+        <a class="nav-link" href="">Show all</a>
+    </div>
+</div>
+<div class="row border-1 p-2" style="flex-wrap: nowrap;overflow-x: hidden;">
+
+    <div class="card m-2 shadow" style="width: 150px;padding: 0px;overflow: visible;" *ngFor="let f of featured">
+        <img [src]="f?.images[0]?.url" class="card-img-top img-fluid">
+        <div class="card-body ">
+            <a class="nav-link">
+                <p class="card-text">{{f.name}}</p>
+            </a>
+        </div>
+    </div>
+
+</div>

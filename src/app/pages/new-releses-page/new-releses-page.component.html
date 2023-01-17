@@ -1,0 +1,16 @@
+<div class="d-flex flex-row justify-content-between mt-2">
+    <div class="d-flex">
+        <h2>New releases :</h2>
+    </div>
+</div>
+
+<div class="row border-1 p-2">
+    <div class="card m-2" style="width: 150px;padding: 0px;overflow: hidden;" *ngFor="let newRelease of newReleases">
+        <img [src]="newRelease?.images[0]?.url" class="card-img-top img-fluid">
+        <div class="card-body ">
+            <a class="nav-link" routerLink="/albums/{{newRelease.id}}">
+                <p class="card-text">{{newRelease.name}}</p>
+            </a>
+        </div>
+    </div>
+</div>

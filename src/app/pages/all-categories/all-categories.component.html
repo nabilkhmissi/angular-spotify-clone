@@ -1,0 +1,17 @@
+<div class="d-flex flex-row justify-content-between my-3">
+    <div class="d-flex">
+        <h3>Categories :</h3>
+    </div>
+</div>
+<div class="row border-1">
+    <div class="card m-2" style="width: 150px;padding: 0px;overflow: visible;" *ngFor="let category of categories">
+        <a routerLink="/tracks-by-category/{{category.id}}" class="nav-link">
+            <img [src]="category?.icons[0]?.url" class="card-img-top img-fluid">
+            <div class="card-body ">
+                <a class="nav-link">
+                    <p class="card-text">{{category.name}}</p>
+                </a>
+            </div>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="container-fluid py-3">
+    <div class="col-md-12">
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-2">
+                    <img [src]="artist?.images[0]?.url" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ artist?.name }}</h3>
+                        <h4>Followers : {{ artist.followers?.total }}</h4>
+                        <div class="d-flex flex-row mb-3 flex-wrap">
+                            <p class="p-1">Genres : </p>
+                            <div class="p-1" *ngFor="let genre of artist.genres">
+                                <h6><span class="badge spotify-badge">{{ genre }}</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <h1>Albums :</h1>
+    <div class="row border-1 p-2">
+        <div class="card m-2" style="width: 150px;padding: 0px;overflow: hidden;" *ngFor="let album of albums">
+            <img [src]="album?.images[0]?.url" class="card-img-top img-fluid" >
+            <div class="card-body ">
+                <a class="nav-link" routerLink="/albums/{{album.id}}">
+                    <p class="card-text">{{album.name}}</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
